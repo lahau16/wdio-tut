@@ -30,7 +30,7 @@ jobs:
       - name: Setup repo
         uses: actions/checkout@v1
       - name: install chrome
-            run: |
+            run: 
               sudo apt-get update 
               sudo apt-get install google-chrome-stable 
       - name: Install package
