@@ -23,17 +23,16 @@ jobs:
     strategy:
       matrix:
         # deno: ["v1.x"]
-        os: [ windows-latest]
+        # os: [ windows-latest]
+        os: [ubuntu-latest]
 
     steps:
       - name: Setup repo
         uses: actions/checkout@v1
-
-      # - name: Setup Deno
-      #   uses: denolib/setup-deno@c7d7968ad4a59c159a777f79adddad6872ee8d96
-      #   with:
-      #     deno-version: ${{ matrix.deno }} # tests across multiple Deno versions
-
+      - name: install chrome
+            run: |
+              sudo apt-get update 
+              sudo apt-get install google-chrome-stable 
       - name: Install package
         run: npm install
 
