@@ -38,7 +38,7 @@ describe('webdriver.io page', () => {
         // Act
         const INPUT_SEARCH = await browser.$('input[type="text"]');
         const BTN_SEARCH = await browser.$('//button[contains(text(), "Tìm kiếm")]');
-        await INPUT_SEARCH.setValue("xe hơi");
+        await INPUT_SEARCH.setValue("iphone 12");
         await BTN_SEARCH.click();
         await browser.pause(3000);
         // Assert
