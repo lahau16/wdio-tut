@@ -24,11 +24,31 @@ describe('webdriver.io page', () => {
         // Assert
         let pageTitle = await browser.getTitle()
         console.log(`Page title is: ${pageTitle}`);
-        if (pageTitle.toLowerCase().includes('bỉm em bé')) {
-            console.log("Test Passed!!!");
-        } else {
-            console.log("Test Failed!!!");
-        }
+        // if (pageTitle.toLowerCase().includes('bỉm em bé')) {
+        //     console.log("Test Passed!!!");
+        // } else {
+        //     console.log("Test Failed!!!");
+        // }
+    })
+})
+describe('webdriver.io page', () => {
+    it('should have the right title', async () => {
+        // Arrange
+        await browser.url('https://tiki.vn');
+        // Act
+        const INPUT_SEARCH = await browser.$('input[type="text"]');
+        const BTN_SEARCH = await browser.$('//button[contains(text(), "Tìm kiếm")]');
+        await INPUT_SEARCH.setValue("xe hơi");
+        await BTN_SEARCH.click();
+        await browser.pause(3000);
+        // Assert
+        let pageTitle = await browser.getTitle()
+        console.log(`Page title is: ${pageTitle}`);
+        // if (pageTitle.toLowerCase().includes('bỉm em bé')) {
+        //     console.log("Test Passed!!!");
+        // } else {
+        //     console.log("Test Failed!!!");
+        // }
     })
 })
 
