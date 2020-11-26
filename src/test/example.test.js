@@ -1,16 +1,16 @@
-// const LoginPage = require('../pageobjects/login.page');
-// const SecurePage = require('../pageobjects/secure.page');
+const LoginPage = require('../pageobjects/login.page');
+const SecurePage = require('../pageobjects/secure.page');
 
-// describe('My Login application', () => {
-//     it('should login with valid credentials', () => {
-//         LoginPage.open();
+describe('My Login application', () => {
+    it('should login with valid credentials', () => {
+        LoginPage.open();
 
-//         LoginPage.login('tomsmith', 'SuperSecretPassword!');
-//         expect(SecurePage.flashAlert).toBeExisting();
-//         expect(SecurePage.flashAlert).toHaveTextContaining(
-//             'You logged into a secure area!');
-//     });
-// });
+        LoginPage.login('tomsmith', 'SuperSecretPassword!');
+        expect(SecurePage.flashAlert).toBeExisting();
+        expect(SecurePage.flashAlert).toHaveTextContaining(
+            'You logged into a secure area!');
+    });
+});
 describe('webdriver.io page', () => {
     it('should have the right title', async () => {
         // Arrange
@@ -24,11 +24,11 @@ describe('webdriver.io page', () => {
         // Assert
         let pageTitle = await browser.getTitle()
         console.log(`Page title is: ${pageTitle}`);
-        // if (pageTitle.toLowerCase().includes('bỉm em bé')) {
-        //     console.log("Test Passed!!!");
-        // } else {
-        //     console.log("Test Failed!!!");
-        // }
+        if (pageTitle.toLowerCase().includes('bỉm em bé')) {
+            console.log("Test Passed!!!");
+        } else {
+            console.log("Test Failed!!!");
+        }
     })
 })
 
